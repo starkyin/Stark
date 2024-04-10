@@ -21,11 +21,11 @@ if st.sidebar.button('Submit'):
     # Apply filters
     filtered_data = data.copy()
     if car_name:
-        filtered_data = filtered_data[filtered_data['car_name'].str.contains(car_name, case=False)]
+        filtered_data = filtered_data[filtered_data['Car_Name'].str.contains(car_name, case=False)]
     if transmission:
-        filtered_data = filtered_data[filtered_data['transmission'].isin(transmission)]
-    filtered_data = filtered_data[(filtered_data['selling_price'] >= selling_price_range[0]) & (filtered_data['selling_price'] <= selling_price_range[1])]
-    filtered_data = filtered_data[(filtered_data['year'] >= year_range[0]) & (filtered_data['year'] <= year_range[1])]
+        filtered_data = filtered_data[filtered_data['Transmission'].isin(transmission)]
+    filtered_data = filtered_data[(filtered_data['Selling_Price'] >= selling_price_range[0]) & (filtered_data['selling_price'] <= selling_price_range[1])]
+    filtered_data = filtered_data[(filtered_data['Year'] >= year_range[0]) & (filtered_data['year'] <= year_range[1])]
     
     # Display the filtered data
     st.write(filtered_data)
